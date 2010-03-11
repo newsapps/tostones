@@ -43,6 +43,7 @@ def build_tables():
     """
     local('rm -rf out')
     local('table-setter build . -p tables')
+    local('python rename_tables.py')
 
 def gzip_assets():
     """
