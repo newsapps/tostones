@@ -33,8 +33,16 @@ def deploy():
     """
     require('settings', provided_by=[production, staging])
     
+    build_tables()
     gzip_assets()
     deploy_to_s3()
+    
+def build_tables():
+    """
+    Rebuilds all tables.
+    """
+    local('rm -rf out')
+    local('table-setter build . -p tables')
 
 def gzip_assets():
     """
