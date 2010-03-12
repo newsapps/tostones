@@ -66,4 +66,6 @@ def shiva_the_destroyer():
     """
     Remove all directories, databases, etc. associated with the application.
     """
+    require('settings', provided_by=[production, staging])
+    
     local('s3cmd del --recursive s3://%(s3_bucket)s/%(project_name)s' % env)
