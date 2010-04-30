@@ -15,6 +15,9 @@
     <%= javascript_script_tag "/javascripts/application.js" %>
     <%= stylesheet_link_tag "/stylesheets/stylesheet.css", :media=>"screen" %>
     
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
     <script>
       <% if !table.nil? %>
         var sortPlease = <%= table.sortable? %>;
@@ -28,6 +31,10 @@
   </head>
   <body>
     <div id="table_fu">
+      <div id="logo"><a href="http://www.chicagotribune.com/">
+          <img src="images/logo.png"
+               alt="Chicago Tribune" 
+               title="Chicago Tribune"/></a></div>
       <%= yield %>
     </div>
   </body>

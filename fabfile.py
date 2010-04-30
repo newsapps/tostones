@@ -45,6 +45,12 @@ def build_tables():
     local('table-setter build . -p tables')
     local('python rename_tables.py')
 
+def runserver():
+    """
+    Runs local dev server
+    """
+    local('cd out; python -m SimpleHTTPServer')
+
 def gzip_assets():
     """
     GZips every file in the assets directory and places the new file
