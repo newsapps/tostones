@@ -44,6 +44,9 @@ def build_tables():
     local('rm -rf out')
     local('table-setter build . -p tables')
     local('python rename_tables.py')
+    
+    # HACK - copy local public assets
+    local('cp -r public/* out/tables')
 
 def runserver():
     """

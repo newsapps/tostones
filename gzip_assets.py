@@ -17,9 +17,6 @@ shutil.copytree('out', 'gzip')
 
 for path, dirs, files in os.walk('gzip'):
     for filename in files:
-        if filename[-3:] in ['gif', 'png', 'jpg']:
-            continue
-        
         file_path = os.path.join(path, filename)
         
         f_in = open(file_path, 'rb')
