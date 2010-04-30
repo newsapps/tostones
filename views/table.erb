@@ -8,7 +8,7 @@
 <div class="controls">
   <% if !table.faceted? %>
     <% if !table.hard_paginate? %>
-      <div id="filter">Filter: <input type="text"></div>
+      <div id="filter">Search this table: <input type="text"></div>
     <% end %>
     <div id="pager" class="pager" <% if table.total_pages < 2 %>style="display:none;"<% end %>>
       <form>

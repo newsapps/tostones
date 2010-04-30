@@ -41,6 +41,9 @@ body {background:white url('../images/gradient.png') repeat-x -20px 0; padding:2
     color:#666;
     font-size:12px;
   }
+    #table_fu .story-link {
+      font-size:16px;
+    }
   #table_fu div.pager{
     float:right;
     width: 15%;
