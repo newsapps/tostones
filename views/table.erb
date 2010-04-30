@@ -5,9 +5,8 @@
     <% if !table.hard_paginate? %>
       <div id="filter">Filter: <input type="text"></div>
     <% end %>
-    <div id="pager" class="pager">
+    <div id="pager" class="pager" <% if table.total_pages < 2 %>style="display:none;"<% end %>>
       <form>
-        <% if table.total_pages > 1 %>
         <a href="<%= url_for "/#{table.slug}/#{table.prev_page}/" if !table.prev_page.nil? %>" class="prev">prev</a>
         <span class="pagedisplay"/><%= "#{table.page} / #{table.total_pages}" if table.hard_paginate? %></span>
         <a href="<%= url_for "/#{table.slug}/#{table.next_page}/" if !table.next_page.nil? %>" class="next">next</a>
@@ -18,7 +17,6 @@
               <%= table.per_page * count%></option>
             <% end %>
           </select>
-        <% end %>
         <% end %>
       </form>
     </div>
