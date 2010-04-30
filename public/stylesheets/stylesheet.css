@@ -20,27 +20,35 @@ body {background:white url('../images/gradient.png') repeat-x -20px 0; padding:2
     margin: 0; 
     padding: 0;
   }
-  #table_fu div#table_title{
+  #table_fu div.table_title{
     font-size: 24px;
     font-weight: bold;
+  }
+  #table_fu .deck {
+      width:650px;
   }
   #table_fu div{
     margin-bottom: 14px;
   }
-  #table_fu #controls{
+  #table_fu .controls{
     overflow:auto;
     clear: both;
     margin-bottom: 0px;
     
   }
-  #table_fu div#pager{
+  #table_fu .byline-date {
+    font-weight:bold;
+    color:#666;
+    font-size:12px;
+  }
+  #table_fu div.pager{
     float:right;
     width: 15%;
   }
-    #table_fu div#pager div.pagedisplay{
+    #table_fu div.pager div.pagedisplay{
       display: inline;
     }
-  #table_fu div#filter{
+  #table_fu div.filter{
     float:left;
     width:30%;
   }
@@ -76,7 +84,7 @@ body {background:white url('../images/gradient.png') repeat-x -20px 0; padding:2
       }
       
       #table_fu th.header span {
-          display:block;
+          display:inline;
           text-shadow:0 1px 0 white;
           padding-right:15px;
           background-image:url(../images/bg.gif);

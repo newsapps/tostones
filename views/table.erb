@@ -1,6 +1,11 @@
-<div id="table_title"><%= table.title %></div>
-<div id="deck"><%= table.deck %></div>
-<div id="controls">
+<div class="table_title"><%= table.title %></div>
+<div class="byline-date">By <%= table.byline %> &ndash; <%= table.date %></div>
+<div class="deck"><%= table.deck %></div>
+<div class="story-link">
+    <a href="<%= table.storyurl %>" rel="external">
+        « Go to the related story</a>
+</div>
+<div class="controls">
   <% if !table.faceted? %>
     <% if !table.hard_paginate? %>
       <div id="filter">Filter: <input type="text"></div>

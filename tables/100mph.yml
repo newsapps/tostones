@@ -1,6 +1,9 @@
 table:
   title:      Area judges and supervision rates
   google_key: 0AlXMOHKxzQVRdGlmWkU3djcycDdsRy05UkR0TTJFUHc
+  date: 'May 2, 2010'
+  byline: 'Joe Mahr'
+  storyurl: "javascript:history.back();"
   deck:
     <p>Of all judges in Cook, DuPage and Lake counties, 41 heard at least 10 cases of people cited by state police for speeding at least 100 mph. Search for the name of each judge, and how often they gave a special probation, called supervision, to keep tickets off the cited speeders’ driving records.</p>
   footer:
