@@ -10,7 +10,8 @@
     <% if !table.hard_paginate? %>
       <div id="filter">Search this table: <input type="text"></div>
     <% end %>
-    <div id="pager" class="pager" <% if table.total_pages < 2 %>style="display:none;"<% end %>>
+    <div id="pager-wrapper" <% if table.total_pages < 2 %>style="display:none;"<% end %>>
+    <div id="pager" class="pager">
       <form>
         <a href="<%= url_for "/#{table.slug}/#{table.prev_page}/" if !table.prev_page.nil? %>" class="prev">prev</a>
         <span class="pagedisplay"/><%= "#{table.page} / #{table.total_pages}" if table.hard_paginate? %></span>
@@ -24,6 +25,7 @@
           </select>
         <% end %>
       </form>
+    </div>
     </div>
   <% end %>
 </div>

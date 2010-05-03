@@ -20,7 +20,7 @@
       
       function renderTable(table){
         var newString = table.config.filterSelector[0].value;
-        if(newString.length > 1){
+        if(newString.length > 0){
           if(table.config.container){
             table.config.container.hide();
           }
@@ -62,6 +62,7 @@
           table.config.collection = table.config.rowsCopy.slice(0);
           if(table.config.container){
             table.config.container.show();
+            replaceRows(table);
           } else {
             replaceRows(table);
           }
