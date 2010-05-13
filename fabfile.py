@@ -49,7 +49,15 @@ def runserver():
     """
     Runs local dev server
     """
+    # local('table-setter start out/tables') # breaks for some reason
     local('cd out; python -m SimpleHTTPServer')
+
+def build_and_run():
+    """
+    Rebuilds all tables and runs local dev server
+    """
+    build_tables()
+    runserver()
 
 def gzip_assets():
     """

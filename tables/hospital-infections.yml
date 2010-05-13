@@ -1,0 +1,32 @@
+table:
+  title:      Central line infections in Illinois hospitals
+  google_key: 0AvTXIIWJeynVdHVPYWtWNnhRUjJ3dUY0eC1Ld3BQSEE
+  date: 'May 15, 2010'
+  byline: 'TKTK'
+  storyurl: ""
+  deck:
+    <p>Newly released data shines a spotlight on central line-associated bloodstream infections (CLABSIs) in Illinois hospitals.  These common infections kill up to one-third of people who get them.  A substantial number of hospitals had no CLABSIs in their medical, surgical or combined medical/surgical intensive care units. A relatively small group of hospitals had infection rates that were significantly higher than expected.</p>
+
+    <p>Search by the name of the hospital or by the number of infections below.  The data cover 2009 and are for adult ICUs only.</p>
+  footer:
+    <p>Most of the data above comes from the Illinois Hospital Report Card and Consumer Guide to Health Care.  Hospitals reported it directly to a unit of the Centers for Disease Control and Prevention, which then forwarded it to the Illinois Department of Public Health. Results have not yet been audited.  Several hospitals did not list data in the Illinois Report Card.  The Tribune called those hospitals directly and asked for their results. Ratios are not included for hospitals contacted by the Tribune because they involve special calculations.</p>
+  column_options:
+    columns:
+    -  Hospital, city
+    -  Number of infections
+    -  Central line days
+    -  IDPH 'expected' infections
+    -  Ratio of actual to expected infections
+    -  IDPH assessment of infection ratio
+    -  ICU type
+    -  Source
+    style:
+        Hospital: ''
+    sorted_by: 
+        Number of infections: ascending
+    formatting:
+        Hospital, city:
+            method: link
+            arguments: [Hospital, URL]
+  per_page: 25
+  live: true

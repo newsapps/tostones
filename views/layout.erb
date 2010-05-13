@@ -1,41 +1,656 @@
-<% table ||= nil %>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><%= table.nil? ? "All Tables" : table.title %></title>
-    <script type="text/javascript"
-            src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("jquery", "1", {uncompressed:true})
-    </script>
-    <%= javascript_script_tag "/javascripts/jquery.tablesorter.js" %>
-    <%= javascript_script_tag "/javascripts/jquery.tablesorter.pager.js" %>
-    <%= javascript_script_tag "/javascripts/jquery.tablesorter.multipagefilter.js" %>
-    <%= javascript_script_tag "/javascripts/application.js" %>
-    <%= stylesheet_link_tag "/stylesheets/stylesheet.css", :media=>"screen" %>
-    
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-    <script>
-      <% if !table.nil? %>
-        var sortPlease = <%= table.sortable? %>;
-        var sortOrder = <%= table.sort_array.inspect || "null"%>;
-        var perPage = <%= table.per_page %>;
-      <% else %>
-        var sortPlease = false;
-      <% end %>
-    </script>
-    
-  </head>
-  <body>
-    <div id="table_fu">
-      <div id="logo"><a href="http://www.chicagotribune.com/">
-          <img src="images/logo.png"
-               alt="Chicago Tribune" 
-               title="Chicago Tribune"/></a></div>
-      <%= yield %>
-    </div>
-  </body>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title><%= table.nil? ? "All Tables" : table.title %></title>
+        <meta name="y_key" content="43959a87935ee9bb">
+        <meta name="msvalidate.01" content="AAC9C18F70AC386BC4DCF4DDF9BF1786">
+        <link rel="shortcut icon" href="http://www.chicagotribune.com/favicon.ico">
+        <link rel="icon" type="image/ico" href="http://www.chicagotribune.com/favicon.ico"><!-- COMMON STYLES USED THROUGH OUT SIDES -->
+        <link href="http://www.chicagotribune.com/hive/stylesheets/reset.css" media="all" rel="stylesheet" type="text/css">
+        <link href="http://www.chicagotribune.com/hive/stylesheets/footer.css" media="all" rel="stylesheet" type="text/css">
+        <link href="http://www.chicagotribune.com/hive/stylesheets/header.css" media="all" rel="stylesheet" type="text/css">
+        <link href="http://www.chicagotribune.com/hive/stylesheets/common.css" media="all" rel="stylesheet" type="text/css">
+        <link href="http://www.chicagotribune.com/stylesheets/market.css" media="all" rel="stylesheet" type="text/css"><!-- SUPPLEMENTAL FOR OBVIOUS REASONS --><!--[if lte IE 6]>
+        <link href="http://www.chicagotribune.com/hive/stylesheets/ie6-styles.css" media="all" rel="stylesheet" type="text/css" />
+        <script defer type="text/javascript" src="http://www.chicagotribune.com/hive/javascripts/pngfix.js"></script>
+    <![endif]-->
+        <!--[if lte IE 7]>
+        <link href="http://www.chicagotribune.com/hive/stylesheets/ie7-styles.css" media="all" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+        <script type="text/javascript"
+                src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+          google.load("jquery", "1", {uncompressed:true});
+        </script>
+        <%= javascript_script_tag "/javascripts/jquery.tablesorter.js" %>
+        <%= javascript_script_tag "/javascripts/jquery.tablesorter.pager.js" %>
+        <%= javascript_script_tag "/javascripts/jquery.tablesorter.multipagefilter.js" %>
+        <%= javascript_script_tag "/javascripts/application.js" %>
+        <%= stylesheet_link_tag "/stylesheets/stylesheet.css", :media=>"screen" %>
+        
+        <script>
+          <% if !table.nil? %>
+            var sortPlease = <%= table.sortable? %>;
+            var sortOrder = <%= table.sort_array.inspect || "null"%>;
+            var perPage = <%= table.per_page %>;
+          <% else %>
+            var sortPlease = false;
+          <% end %>
+        </script>
+		
+		<script type="text/javascript" charset="utf-8">
+			jQuery(document).ready(function(){
+				jQuery('a.mainNav').mouseover(function(){
+					jQuery('a.mainNav').parent().removeClass('highlight');
+					jQuery(this).parent().addClass('highlight');
+				});
+				jQuery('a.mainNav').mouseout(function(){
+					jQuery('a.mainNav').parent().removeClass('highlight');
+					jQuery('a.mainNav').slice(1,2).parent().addClass('highlight');
+				})
+			})
+		</script>
+		
+    </head>
+    <body>
+        <div id="container">
+            <!-- BEGIN HEADER -->
+            <div id="branding" class="thirdParty">
+                <div id="classified-bar" class="clearfix">
+                    <div id="classBarNav">
+                        <ul class="classBarNavLink">
+                            <li>
+                                <a href="https://services.chicagotribune.com/Circulation/regularDeliveryAvailability.htm">Home delivery</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/services/">Perks</a>
+                            </li>
+                            <li>
+                                <a href="https://advertise.chicagotribune.com">Advertise</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/classified/jobs/">Jobs</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/classified/automotive/">Cars</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/classified/realestate/">Homes</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/classified/realestate/apartments/">Apartments</a>
+                            </li>
+                            <li>
+                                <a href="http://www.chicagotribune.com/shopping/">Deals</a>
+                            </li>
+                            <li class="lastMenuItem">
+                                <a href="http://www.chicagotribune.com/classified/">More classified</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="headerthirdparty" class="clearfix">
+                    <div id="logothirdparty">
+                        <a href="http://www.chicagotribune.com"><img src="http://www.chicagotribune.com/images/thirdpartylogo.gif" alt="chicagotribune.com"></a>
+                    </div>
+                    <div id="headerAd">
+                        <!-- BEGIN LEADER 728 X 90 AD SECTION --><script language="JavaScript" type="text/javascript">
+ord=Math.random()*10000000000000000;
+                        document.write('<iframe id="dclk' + ord+'" src="" width="728" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling=no borderCOLOR="#000000">'); if (navigator.userAgent.indexOf("Gecko")==-1) { document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/trb.chicagotribune/news/local/cloutschool;!category=net;pos=t;tile=1;dcopt=ist;ptype=sf;sz=728x90;abr=!ie;ord=' + ord + '?" type="text/javascript"><\/script>');
+                        }
+                        document.write('<\/iframe>');
+                        if (document.getElementById('dclk'+ord+'' )) { document.getElementById('dclk'+ord+'').src = 'http://ad.doubleclick.net/adi/trb.chicagotribune/news/local/cloutschool;!category=net;pos=t;tile=1;dcopt=ist;ptype=sf;sz=728x90;ord=' + ord + '?'; } 
+                        </script><noscript><a href="http://ad.doubleclick.net/jump/trb.chicagotribune/news/local/cloutschool;dcopt=ist;sz=728x90;ord='+%20ord%20+%20'?';target="><img src="http://ad.doubleclick.net/ad/trb.chicagotribune/news/local/cloutschool;dcopt=ist;sz=728x90;ord='ord%20+%20?';%20width=" height="90" border="0" alt=""></a></noscript> <!-- End ad tag -->
+                    </div>
+                </div>
+                <div id="navigation" class="clearfix">
+                    <div id="layerOne">
+                        <ul id="root">
+                            <li class="navLink first">
+                                <a href="http://www.chicagotribune.com/" class="mainNav"><span>Home</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagobreakingnews.com/blog/">Breaking</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/tribnation">Trib Nation</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/weather/">Skilling's weather</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/classified/automotive/traffic">Traffic</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.legacy.com/obituaries/chicagotribune/">Obits</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/columnists/chi-amydickinson,0,1791817.columnist">Amy</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/horoscopes/">Horoscopes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/blogs/">Blogs</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/columnists/all/">Columns</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/videobeta/">Video</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/photo/">Photos</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/coupons">Coupons</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink highlight">
+                                <a href="http://www.chicagotribune.com/news/local/" class="mainNav"><span>News</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagobreakingnews.com/blog/">Breaking</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/local/">Chicagoland</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/nationworld/">Nation/World</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://elections.chicagotribune.com/">Elections</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.legacy.com/obituaries/chicagotribune/">Obits</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://newsblogs.chicagotribune.com/clout_st/">Clout St.</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.swamppolitics.com/news/politics/blog/">Swamp</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/topic/politics/government/barack-obama-PEPLT007408.topic">Obama</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/education">Schools</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://newsblogs.chicagotribune.com/religion_theseeker/">Religion</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/strange/">Weird</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/topic/">Topics</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/business/" class="mainNav"><span>Business</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagobreakingbusiness.com">Breaking</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/business/yourmoney/">Your money</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://newsblogs.chicagotribune.com/towerticker/">Media</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/business/smallbusiness/">Small business</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/business/investors/">Investing</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/technology/deals/">Tech</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/classified/jobs/">Jobs</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/classified/realestate/">Homes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/classified/automotive/">Autos</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/shopping/">Deals</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://markets.chicagotribune.com/custom/tribune-interactive/localmktscreener/html-localmktscreener-winlose.asp">Chicago 100</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/business/columnists/">Columnists</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/sports/" class="mainNav"><span>Sports</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagobreakingsports.com/">Breaking</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/football/bears/">Bears</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/hockey/blackhawks/">Blackhawks</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/basketball/bulls/">Bulls</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/baseball/cubs/">Cubs</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/baseball/whitesox/">White Sox</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/college/">College</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/soccer/">Soccer</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/golf/">Golf</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/motorracing">Autos</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/highschool/">Preps</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/smack">Smack</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/sports/scoresstats/">Scores</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/news/watchdog/" class="mainNav"><span>Watchdog</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/health/agentorange/">Agent Orange</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/watchdog/nursinghomes/">Nursing homes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/watchdog/corruption/">State of Corruption</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/watchdog/college/">College Clout</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/watchdog/consumer">Consumer Watch</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/business/problemsolver">Problem Solver</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/data/">Find data</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/corruption/">Editorials</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/entertainment/" class="mainNav"><span>Entertainment</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/entertainment/dining/">Dining</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/entertainment/events/">Events</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://featuresblogs.chicagotribune.com/entertainment_tv/">TV</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://tvlistings.zap2it.com/tvlistings/ZCGrid.do?aid=chi">TV listings</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/entertainment/movies">Movies</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://movies.zap2it.com/movies/mvhome.do?aid=chi">Movie listings</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://leisureblogs.chicagotribune.com/turn_it_up/">Music</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://leisureblogs.chicagotribune.com/the_theater_loop/">Theater</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://featuresblogs.chicagotribune.com/printers-row/">Books</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/entertainment/celebrity/">Celebrity</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://chicago.metromix.com/">Metromix</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/entertainment/columnists/">Columnists</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/features/" class="mainNav"><span>Life</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/family/">Family</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/food/">Food</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/style/">Style</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/happynews/">Happy news</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/classified/realestate/">Homes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/gardening">Gardens</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/shopping/">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/coupons">Coupons</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/horoscopes/">Horoscopes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/games/">Games</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/lottery/">Lottery</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/features/columnists/">Columnists</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/health/" class="mainNav"><span>Health</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://featuresblogs.chicagotribune.com/features_julieshealthclub/">Julie's Health Club</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.healthkey.com/" target="_blank">HealthKey</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.healthkey.com/a-z/swine-flu/" target="_blank">Swine flu</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.healthkey.com/a-z/" target="_blank">Health A-Z</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/watchdog/nursinghomes/">Nursing homes</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/health/agentorange/">Agent Orange</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/travel/" class="mainNav"><span>Travel</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagoweathercenter.com/current/world/" target="_blank">Global weather</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/deals/">Travel deals</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/chicago/">Chicago travel</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/midwest/">Midwest travel</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/unitedstates">U.S. travel</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/other/">International travel</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/family/">Family travel</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/travel/escapes/">Warm escapes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink">
+                                <a href="http://www.chicagotribune.com/news/opinion/" class="mainNav"><span>Opinion</span></a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/tribnation">Trib Nation</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/editorials/">Editorials</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/commentary/">Commentary</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/columnists/all/">Columns</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/blogs/">Blogs</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/letters/">Letters to Editor</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/opinion/chi-stantis-cartoongallery,0,2807119.cartoongallery">Stantis cartoons</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.chicagotribune.com/news/corrections/">Corrections</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="https://services.chicagotribune.com/Circulation/regularDeliveryAvailability.htm" class="mainNav">Home delivery</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/services/" class="mainNav">Perks</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="https://advertise.chicagotribune.com" class="mainNav">Advertise</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/classified/jobs/" class="mainNav">Jobs</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/classified/automotive/" class="mainNav">Cars</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/classified/realestate/" class="mainNav">Homes</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/classified/realestate/apartments/" class="mainNav">Apartments</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/shopping/" class="mainNav">Deals</a>
+                            </li>
+                            <li class="navLink hideMainNav">
+                                <a href="http://www.chicagotribune.com/classified/" class="mainNav">More classified</a>
+                            </li>
+                        </ul>
+                        <div id="search">
+                            <form method="get" action="http://www.chicagotribune.com/search/dispatcher.front" id="searchBox" onsubmit="javascript:return checkForm(this,'Query')" name="searchBox">
+                                <input id="searchText" type="text" name="Query" value="Search" onfocus="this.value=''"> <input id="target" name="target" value="article" type="hidden"> <input id="searchButton" type="submit" value="Go!">
+                            </form><script language="javascript" type="text/javascript">
+function checkForm (searchForm)
+                            {
+                            var valid;
+                            if (searchForm.Query.value == "") {
+                                alert("Please Enter a Search Term");
+                                searchForm.Query.focus()
+                                valid = false;
+                            } else {
+                                valid = true;
+                                if (searchForm.bool.value == "all") {
+                                    searchForm.Query.value = "\"" + searchForm.Query.value + "\"";
+                                }
+                            }
+                            return valid;
+                            }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- END HEADER -->
+            <div id="section" class="thirdPartyContent">
+                <div id="table_fu">
+			      <%= yield %>
+			    </div>
+            </div><!-- BEGIN FOOTER -->
+            <div id="footer">
+                <div id="footerContainer">
+                    <div id="footerlogo">
+                        <img src="http://www.chicagotribune.com/media/graphic/2009-06/46895467.png" alt="footer graph">
+                    </div>
+                    <div id="footertext">
+                        <ul>
+                            <li class="nav">
+                                <ul class="links">
+                                    <li id="footer-item-1">
+                                        <a href="http://www.chicagotribune.com#">PARTNERS:</a>
+                                    </li>
+                                    <li id="footer-item-2">
+                                        <a href="http://www.chicagomag.com/">Chicago Magazine</a>
+                                    </li>
+                                    <li id="footer-item-3">
+                                        <a href="http://www.chicagonow.com/">ChicagoNow</a>
+                                    </li>
+                                    <li id="footer-item-4">
+                                        <a href="http://www.cltv.com/">CLTV</a>
+                                    </li>
+                                    <li id="footer-item-5">
+                                        <a href="http://chicago.metromix.com/">Metromix</a>
+                                    </li>
+                                    <li id="footer-item-6">
+                                        <a href="http://redeye.chicagotribune.com/">RedEye</a>
+                                    </li>
+                                    <li id="footer-item-7">
+                                        <a href="http://www.triblocal.com/">Triblocal</a>
+                                    </li>
+                                    <li id="footer-item-8">
+                                        <a href="http://www.wgnam.com/">WGN Radio</a>
+                                    </li>
+                                    <li id="footer-item-9">
+                                        <a href="http://www.wgntv.com/">WGN-TV</a>
+                                    </li>
+                                    <li id="footer-item-10">
+                                        <a href="http://www.vivelohoy.com/">Vivelo Hoy</a>
+                                    </li>
+                                    <li id="footer-item-11">
+                                        <a href="http://www.baltimoresun.com/">Baltimore Sun</a>
+                                    </li>
+                                    <li id="footer-item-12">
+                                        <a href="http://www.dailypress.com/">Daily Press</a>
+                                    </li>
+                                    <li id="footer-item-13">
+                                        <a href="http://www.courant.com/">Hartford Courant</a>
+                                    </li>
+                                    <li id="footer-item-14">
+                                        <a href="http://www.latimes.com/">Los Angeles Times</a>
+                                    </li>
+                                    <li id="footer-item-15">
+                                        <a href="http://www.orlandosentinel.com/">Orlando Sentinel</a>
+                                    </li>
+                                    <li id="footer-item-16">
+                                        <a href="http://www.sun-sentinel.com/">Sun Sentinel</a>
+                                    </li>
+                                    <li id="footer-item-17">
+                                        <a href="http://www.mcall.com/">The Morning Call</a>
+                                    </li>
+                                </ul>
+                                <ul class="links">
+                                    <li id="footer-item-18">
+                                        <a href="http://www.chicagotribune.com/tos/" rel="nofollow">Terms of service</a>
+                                    </li>
+                                    <li id="footer-item-19">
+                                        <a href="http://www.chicagotribune.com/privacy/" rel="nofollow">Privacy</a>
+                                    </li>
+                                    <li id="footer-item-20">
+                                        <a href="http://getsatisfaction.com/chicago_tribune">Feedback</a>
+                                    </li>
+                                    <li id="footer-item-21">
+                                        <a href="http://www.chicagotribune.com#">Chicago Tribune, 435 N. Michigan Avenue, Chicago, IL 60611</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div><!-- END FOOTER -->
+        </div>
+<script language="JavaScript" type="text/javascript">
+
+        var s_account = "tribglobal";
+        </script><!-- START OMNITURE // hive:metrics-tribune -->
+        <!-- SiteCatalyst code version: H.1.
+Copyright 1997-2005 Omniture, Inc. More info available at
+http://www.omniture.com -->
+        <script type="text/javascript" src="http://www.chicagotribune.com/hive/javascripts/metrics/s_code_trb.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+
+        s.pageName="News Applications - Chicago Tribune - 3rd Party."
+
+            s.server="www.chicagotribune.com" 
+        s.channel="Chicago Tribune:news"
+        s.prop38="3rd Party";
+        s.eVar21="3rd Party";
+        s.hier1="Chicago Tribune:news:local"
+        s.hier2="news:local"
+
+
+
+        /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+        var s_code=s.t();if(s_code)document.write(s_code) 
+        -->  
+        </script><script language="JavaScript" type="text/javascript">
+<!--
+        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+        //-->
+        </script><!--/DO NOT REMOVE/-->
+        <!-- End SiteCatalyst code version: H.1. -->
+        <!-- START REVENUE SCIENCE PIXELLING CODE -->
+        <script src="http://js.revsci.net/gateway/gw.js?csid=B08725" type="text/javascript">
+</script><script type="text/javascript">
+DM_addEncToLoc("Site", (s.server));
+        DM_addEncToLoc("channel", (s.channel));
+        DM_addEncToLoc("keyword", (s.prop3));
+        DM_cat(s.hier1);
+        DM_tag();
+        </script><!-- END REVENUE SCIENCE PIXELLING CODE -->
+        <!-- Time: Tue May 11 15:01:30 PDT 2010-->
+        <!--x-Instance-Name: i9s27n1-->
+    </body>
 </html>
