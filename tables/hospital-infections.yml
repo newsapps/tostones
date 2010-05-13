@@ -21,12 +21,15 @@ table:
     -  ICU type
     -  Source
     style:
-        Hospital: ''
-    sorted_by: 
-        Number of infections: ascending
+      Number of infections: 'text-align:right;'
+      Central line days: 'text-align:right;'
+      IDPH 'expected' infections: 'text-align:right;'
+      Ratio of actual to expected infections: 'text-align:right;'
+      IDPH assessment of infection ratio: 'text-align:right;'
+    sorted_by:
+      Number of infections: descending
     formatting:
-        Hospital, city:
-            method: link
-            arguments: [Hospital, URL]
-  per_page: 25
+      Hospital, city:
+        method: link
+        arguments: [Hospital, URL]
   live: true
