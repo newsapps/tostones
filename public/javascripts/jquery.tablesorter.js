@@ -668,7 +668,10 @@
 			this.isDigit = function(s,config) {
 				var DECIMAL = '\\' + config.decimal;
 				var exp = '/(^[+]?0(' + DECIMAL +'0+)?$)|(^([-+]?[1-9][0-9]*)$)|(^([-+]?((0?|[1-9][0-9]*)' + DECIMAL +'(0*[1-9][0-9]*)))$)|(^[-+]?[1-9]+[0-9]*' + DECIMAL +'0+$)/';
-				return RegExp(exp).test($.trim(s));
+				//return RegExp(exp).test($.trim(s));
+				
+				// Fix hacked in from: http://forum.jquery.com/topic/tablesorter-plugin-not-sorting-numbers-correctly
+				return ($.trim(s).match(/^[+-]?\d+(\.\d+)?$/) != null);
 			};
 			
 			this.clearTableBody = function(table) {
