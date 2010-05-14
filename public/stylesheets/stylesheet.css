@@ -5,7 +5,7 @@
 
 #table_fu * { margin: 0; padding: 0; }
 #table_fu div.table_title {font-size: 24px;font-weight: bold;}
-#table_fu .deck {line-height:1.4em;width:650px;}
+#table_fu .deck {line-height:1.5em;}
 #table_fu p {margin:10px 0;}
 
 #table_fu div{
@@ -19,9 +19,9 @@ margin-bottom: 0px;
 }
 #table_fu .byline-date { font-weight:bold; color:#666; font-size:12px; }
 #table_fu .story-link { font-size:16px; }
-#table_fu div.pager{ float:right; width: 15%; }
+#table_fu div.pager{ float:right; }
 #table_fu div.pager div.pagedisplay{ display: inline; }
-#table_fu #filter { float:left; }
+#table_fu #filter { float:left; font-weight:bold;}
 #table_fu #filter input {width:200px;}
   
     #table_fu #data{
@@ -58,12 +58,14 @@ margin-top: 0.7em;
 font-weight:bold;
 }
 
+#table_fu th.header {text-shadow:0 1px 0 white;}
+
 #table_fu th.header span {
-display:inline;
-text-shadow:0 1px 0 white;
-padding-right:15px;
+display:inline-block;
+width:11px;
+height:11px;
 background-image:url(../images/bg.gif);
-background-position:right center;
+background-position:center;
 background-repeat:no-repeat;
 }
       
