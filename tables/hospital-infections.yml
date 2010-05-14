@@ -31,7 +31,7 @@ table:
       Infections per 1,000 central-line days*: 'text-align:right;'
       Ratio of actual to expected infections: 'text-align:right;'
     sorted_by:
-      Hospital, city: descending
+      Number of infections: descending
     formatting:
       Hospital, city:
         method: link
