@@ -1,40 +1,28 @@
 #table_fu {font-size:14px; padding:20px 0;}
-#table_fu a:link, #table_fu a:visited {color:#336699;}
-#table_fu a:hover, #table_fu a:active {color:#3d9fd2;}
+#table_fu a, #table_fu a:hover {color:black; text-decoration:none; font-weight:normal;}
+#table_fu a:link, #table_fu a:visited {color:#336699; text-decoration:underline; font-weight:normal;}
+#table_fu a:link:hover, #table_fu a:visited:hover {color:#3d9fd2;}
 
-#table_fu *{ margin: 0; padding: 0; }
+#table_fu * { margin: 0; padding: 0; }
 #table_fu div.table_title {font-size: 24px;font-weight: bold;}
 #table_fu .deck {line-height:1.4em;width:650px;}
-#table_fu .deck p {margin:10px 0;}
+#table_fu p {margin:10px 0;}
 
-  #table_fu div{
-    margin-bottom: 14px;
-  }
-  #table_fu .controls{
-    overflow:auto;
-    clear: both;
-    margin-bottom: 0px;
-    
-  }
-  #table_fu .byline-date {
-    font-weight:bold;
-    color:#666;
-    font-size:12px;
-  }
-    #table_fu .story-link {
-      font-size:16px;
-    }
-  #table_fu div.pager{
-    float:right;
-    width: 15%;
-  }
-    #table_fu div.pager div.pagedisplay{
-      display: inline;
-    }
-  #table_fu #filter{
-    float:left;
-    width:30%;
-  }
+#table_fu div{
+margin-bottom: 14px;
+}
+#table_fu .controls{
+overflow:auto;
+clear: both;
+margin-bottom: 0px;
+
+}
+#table_fu .byline-date { font-weight:bold; color:#666; font-size:12px; }
+#table_fu .story-link { font-size:16px; }
+#table_fu div.pager{ float:right; width: 15%; }
+#table_fu div.pager div.pagedisplay{ display: inline; }
+#table_fu #filter { float:left; }
+#table_fu #filter input {width:200px;}
   
     #table_fu #data{
       border: 1px solid #ababab;
@@ -42,51 +30,55 @@
       margin-bottom:14px;
       width: 100%;
     }
-      #table_fu td, #table_fu th{
-        padding: 7px;
-        border-bottom: 1px solid #ababab;
-        text-align: left;
-      }
-      #table_fu th{
-        cursor: pointer;
-        vertical-align: bottom;
-      }
-      #table_fu td.sorted{
-        background-color: #E8F3F9;
-      }
-      #table_fu td .bar{
-        width: 100%;
-        height: 100%;
-        text-align:left;
-        background-color: #99CA3C;
-        color:#444;
-        float:left;
-        padding:0.5em;
-        margin-top: 0.7em;
-        font-weight:bold;
-      }
+    
+
+#table_fu #data td a:link {background:url(../images/information.png) no-repeat right center; padding-right:20px;}
+
+#table_fu td, #table_fu th{
+padding: 7px;
+border-bottom: 1px solid #ababab;
+text-align: left;
+}
+#table_fu th{
+cursor: pointer;
+vertical-align: bottom;
+}
+#table_fu td.sorted{
+background-color: #E8F3F9;
+}
+#table_fu td .bar{
+width: 100%;
+height: 100%;
+text-align:left;
+background-color: #99CA3C;
+color:#444;
+float:left;
+padding:0.5em;
+margin-top: 0.7em;
+font-weight:bold;
+}
+
+#table_fu th.header span {
+display:inline;
+text-shadow:0 1px 0 white;
+padding-right:15px;
+background-image:url(../images/bg.gif);
+background-position:right center;
+background-repeat:no-repeat;
+}
       
-      #table_fu th.header span {
-          display:inline;
-          text-shadow:0 1px 0 white;
-          padding-right:15px;
-          background-image:url(../images/bg.gif);
-          background-position:right center;
-          background-repeat:no-repeat;
-      }
-      
-      #table_fu th.header {
-          background-color:#e8e8e8;
-      }
-      #table_fu th.headerSortDown {
-        background-color: #C2D9EF;
-      }
-      #table_fu th.headerSortDown span {
-          background-image: url(../images/asc.gif);
-      }
-      #table_fu th.headerSortUp{
-        background-color: #C2D9EF;
-      }
-      #table_fu th.headerSortUp span {
-          background-image: url(../images/desc.gif);
-      }
+#table_fu th.header {
+  background-color:#e8e8e8;
+}
+#table_fu th.headerSortDown {
+background-color: #C2D9EF;
+}
+#table_fu th.headerSortDown span {
+  background-image: url(../images/asc.gif);
+}
+#table_fu th.headerSortUp{
+background-color: #C2D9EF;
+}
+#table_fu th.headerSortUp span {
+  background-image: url(../images/desc.gif);
+}
