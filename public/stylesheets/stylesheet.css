@@ -5,7 +5,7 @@
 
 #table_fu * { margin: 0; padding: 0; }
 #table_fu div.table_title {font-size: 24px;font-weight: bold;}
-#table_fu .deck {line-height:1.5em;}
+#table_fu .deck {line-height:1.5em; margin-right:250px;}
 #table_fu p {margin:10px 0;}
 
 #table_fu div{
@@ -19,6 +19,11 @@ margin-bottom: 0px;
 }
 #table_fu .byline-date { font-weight:bold; color:#666; font-size:12px; }
 #table_fu .story-link { font-size:16px; }
+
+#table_fu div.download {float:right; width:180px; border:1px #aaa solid; padding:10px 10px 10px 38px; background:url(../images/database_table.png) no-repeat; background-position:12px 12px; font-size:1em;}
+#table_fu div.download p {margin-top:0;margin-bottom:.5em;}
+
+
 #table_fu div.pager{ float:right; }
 #table_fu div.pager div.pagedisplay{ display: inline; }
 #table_fu #filter { float:left; font-weight:bold;}
@@ -32,7 +37,6 @@ margin-bottom: 0px;
     }
     
 
-#table_fu #data td a:link {background:url(../images/information.png) no-repeat right center; padding-right:20px;}
 
 #table_fu td, #table_fu th{
 padding: 7px;

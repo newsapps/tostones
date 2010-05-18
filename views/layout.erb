@@ -43,20 +43,20 @@
             var sortPlease = false;
           <% end %>
         </script>
-		
-		<script type="text/javascript" charset="utf-8">
-			jQuery(document).ready(function(){
-				jQuery('a.mainNav').mouseover(function(){
-					jQuery('a.mainNav').parent().removeClass('highlight');
-					jQuery(this).parent().addClass('highlight');
-				});
-				jQuery('a.mainNav').mouseout(function(){
-					jQuery('a.mainNav').parent().removeClass('highlight');
-					jQuery('a.mainNav').slice(1,2).parent().addClass('highlight');
-				})
-			})
-		</script>
-		
+        
+        <script type="text/javascript" charset="utf-8">
+            jQuery(document).ready(function(){
+                jQuery('a.mainNav').mouseover(function(){
+                    jQuery('a.mainNav').parent().removeClass('highlight');
+                    jQuery(this).parent().addClass('highlight');
+                });
+                jQuery('a.mainNav').mouseout(function(){
+                    jQuery('a.mainNav').parent().removeClass('highlight');
+                    jQuery('a.mainNav').slice(1,2).parent().addClass('highlight');
+                })
+            })
+        </script>
+        
     </head>
     <body>
         <div id="container">
@@ -525,8 +525,8 @@ function checkForm (searchForm)
             </div><!-- END HEADER -->
             <div id="section" class="thirdPartyContent">
                 <div id="table_fu">
-			      <%= yield %>
-			    </div>
+                  <%= yield %>
+                </div>
             </div><!-- BEGIN FOOTER -->
             <div id="footer">
                 <div id="footerContainer">
@@ -623,21 +623,19 @@ http://www.omniture.com -->
 
         s.pageName="News Applications - Chicago Tribune - 3rd Party."
 
-            s.server="www.chicagotribune.com" 
-        s.channel="Chicago Tribune:news"
+        s.server="www.chicagotribune.com"
+        s.channel="Chicago Tribune:news:data"
         s.prop38="3rd Party";
         s.eVar21="3rd Party";
-        s.hier1="Chicago Tribune:news:local"
-        s.hier2="news:local"
-
-
+        s.hier1="Chicago Tribune:news:data:tables"
+        s.hier2="news:data:tables"
 
         /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
         var s_code=s.t();if(s_code)document.write(s_code) 
         -->  
         </script><script language="JavaScript" type="text/javascript">
 <!--
-        if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+        if(navigator.appVersion.indexOf('MSIE')>=0) document.write(unescape('%3C')+'\!-'+'-')
         //-->
         </script><!--/DO NOT REMOVE/-->
         <!-- End SiteCatalyst code version: H.1. -->
@@ -652,5 +650,28 @@ DM_addEncToLoc("Site", (s.server));
         </script><!-- END REVENUE SCIENCE PIXELLING CODE -->
         <!-- Time: Tue May 11 15:01:30 PDT 2010-->
         <!--x-Instance-Name: i9s27n1-->
+
+		<script type="text/javascript">
+
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+
+		//setup google analytics
+		try {
+		var pageTracker = _gat._getTracker("UA-9792248-1");
+		pageTracker._setAllowAnchor()
+		pageTracker._trackPageview();
+		pageTracker._setDomainName("media.apps.chicagotribune.com");
+		} catch(err) {}
+
+		//track outgoing links
+		jQuery(document).ready(function(){
+		    jQuery("a[rel*='external']").click(function(){
+		        pageTracker._trackPageview('/outgoing/'+ jQuery(this).attr('href'));
+		    });
+		});
+		</script>
     </body>
 </html>

@@ -1,3 +1,12 @@
+<div class="download">
+    <p>
+        <a onclick="pageTracker._trackPageview('http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv');" href="http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv">
+            Download the data used<br>
+            to build this application.
+        </a>
+    </p>
+    <%= table.data_notes %>
+</div>
 <div class="table_title"><%= table.title %></div>
 <div class="story-link">
     <a href="<%= table.storyurl %>" rel="external">
