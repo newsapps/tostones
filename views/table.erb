@@ -17,25 +17,31 @@
 <div class="controls">
   <% if !table.faceted? %>
     <% if !table.hard_paginate? %>
-      <div id="filter">Search this table: <input type="search"></div>
+      <div id="filter"><label for="search">Search this table:</label> <input name="search" type="search"></div>
     <% end %>
     <div id="pager-wrapper" <% if table.total_pages < 2 %>style="display:none;"<% end %>>
     <div id="pager" class="pager">
       <form>
-        <a href="<%= url_for "/#{table.slug}/#{table.prev_page}/" if !table.prev_page.nil? %>" class="prev">previous</a>
+        <div class="pager-nav">
+        <a href="<%= url_for "/#{table.slug}/#{table.prev_page}/" if !table.prev_page.nil? %>" class="prev">« previous</a>
         &nbsp;
         page <span class="pagedisplay"/><%= "#{table.page}/#{table.total_pages}" if table.hard_paginate? %></span>
         &nbsp;
-        <a href="<%= url_for "/#{table.slug}/#{table.next_page}/" if !table.next_page.nil? %>" class="next">next</a>
-        &nbsp;
+        <a href="<%= url_for "/#{table.slug}/#{table.next_page}/" if !table.next_page.nil? %>" class="next">next »</a>
+        </div>
+        <div class="pager-size">
         <% if !table.hard_paginate? %>
+        &nbsp;&nbsp;
+        Show
           <select class="pagesize">
             <% (1..4).each do |count|%>
               <option value="<%= table.per_page * count%>">
               <%= table.per_page * count%></option>
             <% end %>
           </select>
+        rows per page
         <% end %>
+        </div>
       </form>
     </div>
     </div>

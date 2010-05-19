@@ -8,26 +8,32 @@
 #table_fu .deck {line-height:1.5em; margin-right:250px;}
 #table_fu p {margin:10px 0;}
 
-#table_fu div{
+#table_fu .table_title,
+#table_fu .byline-date,
+#table_fu .story-link {
 margin-bottom: 14px;
 }
 #table_fu .controls{
-overflow:auto;
+overflow:hidden;
 clear: both;
 margin-bottom: 0px;
 
 }
 #table_fu .byline-date { font-weight:bold; color:#666; font-size:12px; }
+#table_fu small {color:#666; font-size:11px;}
 #table_fu .story-link { font-size:16px; }
 
 #table_fu div.download {float:right; width:180px; border:1px #aaa solid; padding:10px 10px 10px 38px; background:url(../images/database_table.png) no-repeat; background-position:12px 12px; font-size:1em;}
 #table_fu div.download p {margin-top:0;margin-bottom:.5em;}
 
 
-#table_fu div.pager{ float:right; }
+#table_fu div.pager { float:right;}
+#table_fu div.pager .pager-nav,
+#table_fu div.pager .pager-size {padding:4px 0; text-align:center;}
 #table_fu div.pager div.pagedisplay{ display: inline; }
-#table_fu #filter { float:left; font-weight:bold;}
-#table_fu #filter input {width:200px;}
+#table_fu #filter { float:left; padding:14px 0;}
+#table_fu #filter label {font-weight:bold;}
+#table_fu #filter input {width:260px;font-size:16px;}
   
     #table_fu #data{
       border: 1px solid #ababab;
