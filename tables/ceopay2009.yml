@@ -1,0 +1,36 @@
+table:
+  title:      "Chicago executives' 2009 compensation"
+  google_key: 0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc
+  date: May 22, 2010
+  byline: 
+  storyurl: http://www.chicagotribune.com/
+  data_notes: |
+    <p>Source: Equilar, Tribune research</p>
+  deck: |
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p><a href="http://spreadsheets.google.com/pub?key=0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc&hl=en&single=true&gid=0&output=html">» Examine the complete CEO compensation survey</a></p>
+  footer: |
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  column_options:
+    columns:
+    - Executive & employer
+    - 2009 CASH COMPENSATION
+    - 2009 VALUE OF STOCK AND OPTIONS
+    - 2009 OTHER COMPENSATION
+    - 2009 TOTAL COMPENSATION
+    - 2009 Change
+    style:
+      2009 CASH COMPENSATION: 'text-align:right;'
+      2009 VALUE OF STOCK AND OPTIONS: 'text-align:right;'
+      2009 OTHER COMPENSATION: 'text-align:right;'
+      2009 TOTAL COMPENSATION: 'text-align:right;'
+      2009 Change: 'text-align:right;'
+    sorted_by:
+      2009 TOTAL COMPENSATION: descending
+    formatting:
+      Executive Name: strong
+      Executive Title: small
+      Executive & employer:
+          method: joinbr
+          arguments: [Executive Name, Executive Title, Company Name]
+  live: true
