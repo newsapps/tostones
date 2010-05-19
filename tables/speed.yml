@@ -19,8 +19,11 @@ table:
     -  Convictions
     -  Supervision Rate
     style:
-      Last name: 'text-align:left;'
+      Total cases: 'text-align:right;'
+      Supervisions: 'text-align:right;'
+      Convictions: 'text-align:right;'
+      Supervision Rate: 'text-align:right;'
     sorted_by: 
-      Supervision Rate: 'ascending'
+      Supervision Rate: 'descending'
   per_page: 100
   live: true

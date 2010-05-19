@@ -6,7 +6,7 @@ table:
   storyurl: "http://www.chicagotribune.com/health/ct-met-hospital-infections-20100515,0,2528455.story"
   data_notes: |
     <p><strong>UPDATED: May 18, 2010</strong></p>
-    <p>Sources: Illinois Department of Public Health, hospitals self-reported to Tribune where noted and Tribune research.</p>
+    <p>Sources: Illinois Department of Public Health, Tribune reporting.</p>
   deck: |
     <p>  Recently Illinois published data showing for the first time which hospitals are succeeding in controlling central line-associated bloodstream infections (CLABSIs) and which are not. These infections, which can be fatal, involve large catheters that doctors place in blood vessels to deliver medications and administer fluids to seriously ill patients.</p>
     <p>The searchable table below lists the number of CLABSIs that occurred at various hospitals in 2009 in adult intensive-care units, as well as two common measures of performance: number of CLABSIs per 1,000 days that central lines were in patients, and the ratio of actual infections to the number of infections that might be expected to occur based on national data.</p>
