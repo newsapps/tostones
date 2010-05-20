@@ -14,10 +14,10 @@ table:
   column_options:
     columns:
     - Executive & employer
+    - 2009 TOTAL COMPENSATION
     - 2009 CASH COMPENSATION
     - 2009 VALUE OF STOCK AND OPTIONS
     - 2009 OTHER COMPENSATION
-    - 2009 TOTAL COMPENSATION
     - 2009 Change
     style:
       2009 CASH COMPENSATION: 'text-align:right;'
