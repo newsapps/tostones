@@ -1,5 +1,5 @@
 table:
-  title:      "Chicago executives' 2009 compensation"
+  title:      "Illinois and northwest Indiana executives' 2009 compensation"
   google_key: 0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc
   date: May 22, 2010
   byline: Ryan Mark, Scott Williams and Julie Wernau
@@ -31,28 +31,28 @@ table:
     </p>
   extra_head: |
       <td></td>
-      <td colspan="5" style="border-left:1px solid #ababab;">Compensation</td>
-      <td colspan="4" style="border-left:1px solid #ababab;">2009 Company performance</td>
+      <td colspan="5" style="border-left:1px solid #ababab;">Compensation breakdown</td>
+      <td colspan="4" style="border-left:1px solid #ababab;">Company performance</td>
   column_options:
     columns:
     - Company & executive
     - Total
     - One-year change
-    - Cash
+    - Cash pay
     - Stock & options
-    - Other
-    - Revenue growth
-    - EPS growth
+    - Other compensation
+    - One-year revenue growth
+    - One-year EPS growth
     - Return on equity
     - Stock total return
     style:
-      Cash: 'text-align:right; '
+      Cash pay: 'text-align:right; border-left:1px solid #dfdfdf;'
       Stock & options: 'text-align:right;'
-      Other: 'text-align:right;'
+      Other compensation: 'text-align:right;'
       Total: 'text-align:right; border-left:1px solid #ababab;'
       One-year change: 'text-align:right;'
-      Revenue growth: 'text-align:right; border-left:1px solid #ababab;'
-      EPS growth: 'text-align:right;'
+      One-year revenue growth: 'text-align:right; border-left:1px solid #ababab;'
+      One-year EPS growth: 'text-align:right;'
       Return on equity: 'text-align:right;'
       Stock total return: 'text-align:right;'
     sorted_by:
