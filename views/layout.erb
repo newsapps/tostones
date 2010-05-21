@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=7">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="description" content="">
+        <meta name="description" content="<%= table.meta_description %>">
         <meta name="keywords" content="">
         <title><%= table.nil? ? "All Tables" : table.title %></title>
         <meta name="y_key" content="43959a87935ee9bb">
@@ -621,14 +621,14 @@ http://www.omniture.com -->
 </script>
 <script language="JavaScript" type="text/javascript">
 
-        s.pageName="News Applications - Chicago Tribune - 3rd Party."
+        s.pageName="<%= table.title %> - Chicago Tribune - 3rd Party."
 
         s.server="www.chicagotribune.com"
-        s.channel="Chicago Tribune:news:data"
+        s.channel="Chicago Tribune:news:local"
         s.prop38="3rd Party";
         s.eVar21="3rd Party";
-        s.hier1="Chicago Tribune:news:data:tables"
-        s.hier2="news:data:tables"
+        s.hier1="Chicago Tribune:news:local:<%= table.title %>"
+        s.hier2="news:local:<%= table.title %>"
 
         /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
         var s_code=s.t();if(s_code)document.write(s_code) 
@@ -660,10 +660,9 @@ DM_addEncToLoc("Site", (s.server));
 
 		//setup google analytics
 		try {
-		var pageTracker = _gat._getTracker("UA-9792248-1");
+		var pageTracker = _gat._getTracker("UA-9792248-9");
 		pageTracker._setAllowAnchor()
 		pageTracker._trackPageview();
-		pageTracker._setDomainName("media.apps.chicagotribune.com");
 		} catch(err) {}
 
 		//track outgoing links

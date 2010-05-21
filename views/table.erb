@@ -1,6 +1,10 @@
 <div class="download">
     <p>
+        <% if table.data_url %>
+        <a onclick="pageTracker._trackPageview('<%= table.data_url %>');" href="<%= table.data_url %>">
+        <% else %>
         <a onclick="pageTracker._trackPageview('http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv');" href="http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv">
+        <% end %>
             Download the data used<br>
             to build this application.
         </a>

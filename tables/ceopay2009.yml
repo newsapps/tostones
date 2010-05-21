@@ -4,15 +4,16 @@ table:
   date: May 22, 2010
   byline: Ryan Mark, Scott Williams and Julie Wernau
   storyurl: http://www.chicagotribune.com/business/ct-biz-0523-ceo-pay-20100523,0,7147824.story
+  data_url: http://media.apps.chicagotribune.com/data/ceo_pay_2009_tribune.xls
   data_notes: |
-    <p>Source: <a href="http://www.equilar.com">Equilar Inc.</a>, Bloomberg, company filings</p>
+    <p>Source: <a rel="external" href="http://www.equilar.com">Equilar Inc.</a>, Bloomberg, company filings</p>
+  meta_description: Searchable database of salary information for the executives of the top 100 public companies in Illinois and northwest Indiana.
   deck: |
-    <p>Ever wonder what those big wig executives get paid? Once a year, the Tribune lays it out in black and white: the nuts and bolts of compensation packages that include several elements - a base salary, bonus, stock options and awards, pensions, awards tied to a company's performance and other perks.</p>
+    <p>Ever wonder what those bigwig executives get paid? Once a year, the Tribune lays it out: the nuts and bolts of compensation packages that include several elements — a base salary, bonus, stock options and awards, pensions, awards tied to a company's performance and other perks. Here's the breakdown for the top 100 public companies in Illinois and northwest Indiana.</p>
     <p>
-    <a href="http://www.chicagotribune.com/business/ct-biz-chicago-10-million-dollar-ceos-may23,0,5062683.photogallery">» See Chicago's $10-million CEOs</a><br>
-    <a href="#footer">» Read an explaination of this data and methodology</a><br>
-    <a href="http://spreadsheets.google.com/pub?key=0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc&hl=en&single=true&gid=0&output=html">» Examine the complete CEO compensation survey</a></p>
-    <p>Here's the breakdown for the top 100 companies in Illinois. You can search this table by executive or company name.</p>
+    <a rel="external" href="http://www.chicagotribune.com/business/ct-biz-chicago-10-million-dollar-ceos-may23,0,5062683.photogallery">» See Chicago's $10 million CEOs</a><br>
+    <a href="#footer">» Read an explaination of this data and methodology</a></p>
+    <p>Search this table by executive or company name.</p>
   footer: |
     <p>To examine compensation trends, the Chicago Tribune asked Equilar Inc., an executive compensation research firm based in Redwood Shores, Calif., to gather data on the pay of chief executives of the 100 largest public companies in Illinois and northwest Indiana, as determined by market capitalization on March 31. One company, Motorola, has co-chief executives. To be included in the study, a company must have filed compensation information covering fiscal year 2009 by May 14.</p>
     <p>The CEOs listed are ranked by total compensation, which includes cash pay (salary plus bonuses), the value of stock and options, and other compensation. Securities and Exchange Commission rules for stock and option values changed from using the accounting expense value to a grant-date fair value for companies that filed proxy statements on or after March 1. For consistency’s sake, this chart calculates stock and option values using the grant-date fair value as disclosed by each company.</p>
@@ -24,7 +25,9 @@ table:
     <p>(1) New chief executive.<br>
     (2) Former CEO, or planning to leave.<br>
     (3) Interim CEO.<br>
-    (4) Co-CEO.
+    (4) Co-CEO.<br>
+    (5) Value of stock and/or option awards adjusted by Equilar to be consistent with new SEC reporting rules, as described above, or other factors.<br>
+    N/A = Not available. N/M = Not meaningful.
     </p>
   extra_head: |
       <td></td>
@@ -55,9 +58,9 @@ table:
     sorted_by:
       Total: descending
     formatting:
-      EXECUTIVE NAME: strong
-      TOTAL COMPENSATION: strong
+      Executive name: strong
+      Total: strong
       Company & executive:
           method: joinbr
-          arguments: [COMPANY NAME (TICKER), EXECUTIVE NAME]
+          arguments: [Company name (TICKER), Executive name]
   live: true
