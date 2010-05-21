@@ -2,35 +2,62 @@ table:
   title:      "Chicago executives' 2009 compensation"
   google_key: 0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc
   date: May 22, 2010
-  byline: 
-  storyurl: http://www.chicagotribune.com/
+  byline: Ryan Mark, Scott Williams and Julie Wernau
+  storyurl: http://www.chicagotribune.com/business/ct-biz-0523-ceo-pay-20100523,0,7147824.story
   data_notes: |
-    <p>Source: Equilar, Tribune research</p>
+    <p>Source: <a href="http://www.equilar.com">Equilar Inc.</a>, Bloomberg, company filings</p>
   deck: |
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p><a href="http://spreadsheets.google.com/pub?key=0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc&hl=en&single=true&gid=0&output=html">» Examine the complete CEO compensation survey</a></p>
+    <p>Ever wonder what those big wig executives get paid? Once a year, the Tribune lays it out in black and white: the nuts and bolts of compensation packages that include several elements - a base salary, bonus, stock options and awards, pensions, awards tied to a company's performance and other perks.</p>
+    <p>
+    <a href="http://www.chicagotribune.com/business/ct-biz-chicago-10-million-dollar-ceos-may23,0,5062683.photogallery">» See Chicago's $10-million CEOs</a><br>
+    <a href="#footer">» Read an explaination of this data and methodology</a><br>
+    <a href="http://spreadsheets.google.com/pub?key=0Al9rIMo9SrqcdGlLOURhZnJCLXgxSXBlQUZta1AycXc&hl=en&single=true&gid=0&output=html">» Examine the complete CEO compensation survey</a></p>
+    <p>Here's the breakdown for the top 100 companies in Illinois. You can search this table by executive or company name.</p>
   footer: |
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>To examine compensation trends, the Chicago Tribune asked Equilar Inc., an executive compensation research firm based in Redwood Shores, Calif., to gather data on the pay of chief executives of the 100 largest public companies in Illinois and northwest Indiana, as determined by market capitalization on March 31. One company, Motorola, has co-chief executives. To be included in the study, a company must have filed compensation information covering fiscal year 2009 by May 14.</p>
+    <p>The CEOs listed are ranked by total compensation, which includes cash pay (salary plus bonuses), the value of stock and options, and other compensation. Securities and Exchange Commission rules for stock and option values changed from using the accounting expense value to a grant-date fair value for companies that filed proxy statements on or after March 1. For consistency’s sake, this chart calculates stock and option values using the grant-date fair value as disclosed by each company.</p>
+    <p>Other compensation can include changes in pension values, above-market earnings on deferred compensation and perquisites, such as personal travel on corporate aircraft, financial planning and relocation expenses.</p>
+    <p>The methodology used to calculate total compensation for this project matches the methodology adopted by the SEC for its Summary Compensation Table, which went into effect in late 2006 and was amended at the end of 2009. For companies with fiscal years that ended before Dec. 31, 2009, the equity values were adjusted from the Summary Compensation Table to stay consistent with the amended rules. In cases where a company had more than one CEO during its fiscal year, the chart lists the person who held that position at the end of the fiscal year.</p>
+    <p>Change in pay for each executive is calculated using compensation data from the previous fiscal year. For executives who were not in the CEO position for at least full two fiscal years, change in pay is not calculated.</p>
+    <p>The company performance figures were provided by Bloomberg or were calculated based on company filings. Those figures reflect fiscal-year results except for stock total return, which is for calendar year 2009.</p>
+    <p>Earnings per share are fully diluted and are split-adjusted where appropriate.</p>
+    <p>(1) New chief executive.<br>
+    (2) Former CEO, or planning to leave.<br>
+    (3) Interim CEO.<br>
+    (4) Co-CEO.
+    </p>
+  extra_head: |
+      <td></td>
+      <td colspan="5" style="border-left:1px solid #ababab;">Compensation</td>
+      <td colspan="4" style="border-left:1px solid #ababab;">2009 Company performance</td>
   column_options:
     columns:
-    - Executive & employer
-    - 2009 TOTAL COMPENSATION
-    - 2009 CASH COMPENSATION
-    - 2009 VALUE OF STOCK AND OPTIONS
-    - 2009 OTHER COMPENSATION
-    - 2009 Change
+    - Company & executive
+    - Total
+    - One-year change
+    - Cash
+    - Stock & options
+    - Other
+    - Revenue growth
+    - EPS growth
+    - Return on equity
+    - Stock total return
     style:
-      2009 CASH COMPENSATION: 'text-align:right;'
-      2009 VALUE OF STOCK AND OPTIONS: 'text-align:right;'
-      2009 OTHER COMPENSATION: 'text-align:right;'
-      2009 TOTAL COMPENSATION: 'text-align:right;'
-      2009 Change: 'text-align:right;'
+      Cash: 'text-align:right; '
+      Stock & options: 'text-align:right;'
+      Other: 'text-align:right;'
+      Total: 'text-align:right; border-left:1px solid #ababab;'
+      One-year change: 'text-align:right;'
+      Revenue growth: 'text-align:right; border-left:1px solid #ababab;'
+      EPS growth: 'text-align:right;'
+      Return on equity: 'text-align:right;'
+      Stock total return: 'text-align:right;'
     sorted_by:
-      2009 TOTAL COMPENSATION: descending
+      Total: descending
     formatting:
-      Executive Name: strong
-      Executive Title: small
-      Executive & employer:
+      EXECUTIVE NAME: strong
+      TOTAL COMPENSATION: strong
+      Company & executive:
           method: joinbr
-          arguments: [Executive Name, Executive Title, Company Name]
+          arguments: [COMPANY NAME (TICKER), EXECUTIVE NAME]
   live: true

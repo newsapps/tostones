@@ -49,6 +49,9 @@
 </div>
 <table id="data" class="tabular">
 <thead>
+  <% if table.extra_head %>
+  <tr><%= table.extra_head %></tr>
+  <% end %>
   <tr>
   <% if table.faceted? %>
     <th></th>
@@ -99,4 +102,7 @@
  <tfoot>
  </tfoot>
 </table>
-<div><%= table.footer %></div>
+<div>
+<a name="footer"></a>
+<%= table.footer %>
+</div>
