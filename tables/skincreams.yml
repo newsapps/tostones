@@ -1,0 +1,23 @@
+table:
+  title:      Mercury content of skin whitening creams
+  google_key: 0Al9rIMo9SrqcdHVFUF9nNGtzSVVCcVNLRHFzaEF3NFE
+  date: 'May 24, 2010'
+  byline: 'Ellen Gabler and Sam Roe'
+  storyurl: "http://www.chicagotribune.com/health/ct-met-mercury-skin-creams-20100518,0,4522094.story"
+  data_notes: |
+    <p>Sources: ???, Tribune reporting.</p>
+  deck: |
+    <p>The Chicago Tribune sent 50 skin-lightening creams and products to a certified lab to be tested for mercury. Six were found to contain amounts banned by federal law. Here is a list of all products tested, including those that showed no mercury in a single test. This does not guarantee that they are mercury-free; tests on different samples of the same cream might yield different results.</p>
+  footer: |
+    <p>???</p>
+  column_options:
+    columns:
+    -  Product name
+    -  Location manufactured
+    -  Amount of mercury
+    style:
+      Amount of mercury: 'text-align:right;'
+    sorted_by: 
+      Amount of mercury: 'descending'
+  per_page: 100
+  live: true
