@@ -5,19 +5,21 @@ table:
   byline: 'Ellen Gabler and Sam Roe'
   storyurl: "http://www.chicagotribune.com/health/ct-met-mercury-skin-creams-20100518,0,4522094.story"
   data_notes: |
-    <p>Sources: ???, Tribune reporting.</p>
+    <p>Sources: Tribune reporting, Columbia Analytical Services, Inc..</p>
   deck: |
-    <p>The Chicago Tribune sent 50 skin-lightening creams and products to a certified lab to be tested for mercury. Six were found to contain amounts banned by federal law. Here is a list of all products tested, including those that showed no mercury in a single test. This does not guarantee that they are mercury-free; tests on different samples of the same cream might yield different results.</p>
+    <p>The Chicago Tribune sent 50 skin-lightening creams and products to a certified lab to be tested for mercury. Six were found to contain amounts banned by federal law. Here is a list of all products tested, including those that showed no mercury in a single test. This does not guarantee that they are mercury-free; tests on different batches of the same cream might yield different results.</p>
   footer: |
-    <p>???</p>
+    <p>Products were purchased by Chicago Tribune reporters and tested at Columbia Analytical Services, Inc. in Kelso, Wash.</p>
+    <p>* Two products had two small containers of cream within their package. Both the white and yellow cream in each package were tested for mercury.<br>
+    ** These creams contained less than 1 part per million of mercury, but slightly more than the non-detect level. Because "lightening" or "whitening" is not listed on the packaging, the products are considered cosmetics and can contain 1 part per million of mercury. Lightening and whitening creams cannot contain any mercury. Ly-Na Pearl Face Cream contained .181 parts per million of mercury. San Ing contained .249 ppm.</p>
   column_options:
     columns:
     -  Product name
     -  Location manufactured
-    -  Amount of mercury
+    -  Amount of mercury (parts per million)
     style:
-      Amount of mercury: 'text-align:right;'
+      Amount of mercury (parts per million): 'text-align:right;'
     sorted_by: 
-      Amount of mercury: 'descending'
+      Product name: 'ascending'
   per_page: 100
   live: true
