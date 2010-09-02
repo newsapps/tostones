@@ -1,0 +1,32 @@
+table:
+    title: Chicago Public Schools Internal Grading
+    google_key: 0AlXMOHKxzQVRdHZJZGhPcmtHcDhLaXBzdjlaYWlhT1E
+    date: 'Sept 1, 2010'
+    byline: Christopher Groskopf and Azam Ahmed
+    storyurl: "http://www.chicagotribune.com/health/ct-met-hospital-infections-20100515,0,2528455.story"
+    data_notes: |
+        <p>Sources: Chicago Public Schools, Illinois State Board of Education, Tribune reporting.</p>
+    deck: |
+        <p>Deck...</p>
+    footer: |
+        <p>Footer</p>
+    column_options:
+        columns:
+            -  School
+            -  Enrollment
+            -  % low-income
+            -  2008-2009 Total % of Possible Points
+            -  2009-2010 Total % of Possible Points
+        style:
+            Enrollment: 'text-align:right;'
+            % low-income: 'text-align:right;'
+            2008-2009 Total % of Possible Points: 'text-align:right;'
+            2009-2010 Total % of Possible Points: 'text-align:right;'
+        sorted_by:
+            School: ascending
+        formatting:
+            School:
+                method: link
+                arguments: ['school_name', 'url']
+    show_per_page: 20
+    live: true
