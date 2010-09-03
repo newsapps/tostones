@@ -16,12 +16,16 @@ table:
             -  Enrollment
             -  % low-income
             -  2008-2009 Total % of Possible Points
+            -  2008-2009 Grade
             -  2009-2010 Total % of Possible Points
+            -  2009-2010 Grade
         style:
             Enrollment: 'text-align:right;'
             % low-income: 'text-align:right;'
             2008-2009 Total % of Possible Points: 'text-align:right;'
+            2008-2009 Grade: 'text-align:center;'
             2009-2010 Total % of Possible Points: 'text-align:right;'
+            2009-2010 Grade: 'text-align:center;'
         sorted_by:
             School: ascending
         formatting:
