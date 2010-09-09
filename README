@@ -1,0 +1,16 @@
+In addition to python requirements, this project requires the installation
+of the ruby "table_setter" gem:
+
+% gem install table_setter
+
+If you are using Ruby 1.9, this will bring with it a dependency on FasterCSV,
+which inanely forces Ruby to stop executing when it is required in ruby>=1.9
+
+To fix this, find the installed gems for table_setter and table_fu and change
+
+require "fastercsv"
+to
+require "csv"
+
+and then change references to FasterCSV to CSV 
+
