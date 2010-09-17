@@ -1,3 +1,4 @@
 out
 gzip
 *.pyc
+config.py

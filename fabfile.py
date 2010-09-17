@@ -1,5 +1,7 @@
 from fabric.api import *
 
+import config
+
 """
 Base configuration
 """
@@ -13,14 +15,14 @@ def production():
     Work on production environment
     """
     env.settings = 'production'
-    env.s3_bucket = 'media.apps.chicagotribune.com'
+    env.s3_bucket = config.S3_PRODUCTION_BUCKET
 
 def staging():
     """
     Work on staging environment
     """
     env.settings = 'staging'
-    env.s3_bucket = 'media-beta.tribapps.com'
+    env.s3_bucket = config.S3_STAGING_BUCKET
     
 """
 Commands - deployment
