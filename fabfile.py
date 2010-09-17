@@ -5,7 +5,7 @@ import config
 """
 Base configuration
 """
-env.project_name = 'tables'
+env.project_name = 'tostones'
 
 """
 Environments
