@@ -1,9 +1,9 @@
 <div class="download">
     <p>
         <% if table.data_url %>
-        <a onclick="pageTracker._trackPageview('<%= table.data_url %>');" href="<%= table.data_url %>">
+        <a href="<%= table.data_url %>">
         <% else %>
-        <a onclick="pageTracker._trackPageview('http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv');" href="http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv">
+        <a href="http://spreadsheets.google.com/pub?key=<%= table.google_key %>&hl=en&single=true&gid=0&output=csv">
         <% end %>
             Download the data used<br>
             to build this application.
@@ -29,7 +29,7 @@
         <div class="pager-nav">
         <a href="<%= url_for "/#{table.slug}/#{table.prev_page}/" if !table.prev_page.nil? %>" class="prev">« previous</a>
         &nbsp;
-        page <span class="pagedisplay"/><%= "#{table.page}/#{table.total_pages}" if table.hard_paginate? %></span>
+        page <span class="pagedisplay"><%= "#{table.page}/#{table.total_pages}" if table.hard_paginate? %></span>
         &nbsp;
         <a href="<%= url_for "/#{table.slug}/#{table.next_page}/" if !table.next_page.nil? %>" class="next">next »</a>
         </div>
