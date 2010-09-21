@@ -1,10 +1,20 @@
-In addition to python requirements, this project requires the installation
-of the ruby "table_setter" gem:
+h1. Tostones: Single-click deployment of static TableSetter tables!
+
+h2. Description
+
+Tostones is a Python deployment rig wrapped around the excellent TableSetter, which is itself a wrapper around TableFu--both productions of the fine nerds at ProPublica.  Using it one can render, gzip and deploy a collection of widgety, full-page tables to S3 for hosting.  (Hosting with S3 has the dual benefits of being resilient and cheap.)  Because all these templates inherit from a common base template, modifying the pages to match the rest of your site is a relatively trivial task.  In addition to handling deployment, Tostones also provides a simple 'runserver' command for local testing.
+
+h2. Dependencies
+
+To install the python requirements use pip (and virtualenv, of course):
+
+% pip install -r requirements.txt
+
+In addition to python requirements, this project requires the installation of the "table_setter" Ruby gem (which does all the hard work):
 
 % gem install table_setter
 
-If you are using Ruby 1.9, this will bring with it a dependency on FasterCSV,
-which inanely forces Ruby to stop executing when it is required in ruby>=1.9
+If you are using Ruby 1.9, this will bring with it a dependency on FasterCSV, which inanely forces Ruby to stop executing when it is required in ruby>=1.9
 
 To fix this, find the installed gems for table_setter and table_fu and change
 
@@ -12,5 +22,29 @@ require "fastercsv"
 to
 require "csv"
 
-and then change references to FasterCSV to CSV 
+and then change references to FasterCSV to CSV.
 
+h2. Usage
+
+Create a file in the tostones directory called config.py and put the following configuration in it:
+
+S3_PRODUCTION_BUCKET = 'prod_bucket_name'
+S3_STAGING_BUCKET = 'staging_bucket_name'
+
+You can, of course, use the traditional S3 magic of mapping these buckets to domains so you can have pretty URLs.
+
+Create your table configuration in the tables directory (see example.yml) and run:
+
+% fab build_and_run
+
+This will rebuild all your tables and launch a simple Python server. Visit http://localhost:8000/ in your browser to view your table(s).
+
+You can customize the table templates in the views folder. Once you are satisfied with them you can deploy them to your S3 staging bucket by running.
+
+% fab staging deploy
+
+Your completed table will live under the tostones directory of your S3 bucket.
+
+h2. License
+
+Like TableSetter itself, its MIT. Do as you will.
