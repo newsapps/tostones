@@ -5,7 +5,7 @@ import config
 """
 Base configuration
 """
-env.project_name = 'tostones'
+env.project_name = config.S3_ROOT_DIRECTORY
 
 """
 Environments
