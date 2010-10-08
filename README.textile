@@ -2,7 +2,7 @@ h1. Tostones: Single-click deployment of static TableSetter tables!
 
 h2. Description
 
-Tostones is a Python deployment rig wrapped around the excellent "TableSetter":http://propublica.github.com/table-setter/, which is itself a wrapper around "TableFu":http://propublica.github.com/table-fu/, both productions of the fine nerds at "ProPublica":http://www.propublica.org/.  
+Tostones is a Python deployment rig wrapped around the excellent "TableSetter":"http://propublica.github.com/table-setter"/, which is itself a wrapper around "TableFu":"http://propublica.github.com/table-fu/", both productions of the fine nerds at "ProPublica":"http://www.propublica.org/".  
 
 Using Tostones one can render, gzip and deploy a collection of interactive, full-page tables to Amazon S3 for hosting.  (Hosting with S3 has the dual benefits of being both resilient and cheap.)  In addition to handling deployment, Tostones also provides a simple 'runserver' command for local testing.
 
@@ -48,6 +48,8 @@ You can customize the table templates in the views folder. Once you are satisfie
 
 pre. % fab staging deploy
 
+Tostones includes an example that uses real data from one of our Chicago Tribune stories about speeding tickets.  To see the finished product of this story with complete header and footer visit "http://media.apps.chicagotribune.com/tables/speed.html":"http://media.apps.chicagotribune.com/tables/speed.html".
+
 h2. License
 
-Like "TableSetter":http://propublica.github.com/table-setter/ itself, its MIT. Do as you will.
+Like "TableSetter":http://propublica.github.com/table-setter/ itself, Tostones is licensed under the MIT license. Do as you will.
